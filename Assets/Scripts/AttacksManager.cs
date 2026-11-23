@@ -12,17 +12,19 @@ public class AttacksManager : MonoBehaviour
     private int playerChosenAttack;
     private int enemyChosenAttack;
 
-    private bool playerChoiceMade;
-    private bool enemyChoiceMade;
+    private bool playerChoiceMade = true;
+    private bool enemyChoiceMade = true;
     private Attacks playerAttack;
     private Attacks enemyAttack;
+
+    private float finalDamage;
 
 
     private int attackOrder;
     void Start()
     {
         playerChosenAttack = 1;
-        enemyChosenAttack = 3;
+        enemyChosenAttack = 0;
         playerAttack = playerAttacks[playerChosenAttack];
         enemyAttack = enemyAttacks[enemyChosenAttack];
     }
@@ -32,28 +34,32 @@ public class AttacksManager : MonoBehaviour
         if(playerChoiceMade && enemyChoiceMade)
         {
             CalculateSpeed();
+            playerChoiceMade = false;
+            enemyChoiceMade = false;
         }
     }
 
     private void CalculateSpeed()
     {
-        if (playerAttack.speed < enemyAttack.speed)
+        if (player.speed < enemy.speed)
         {
-            //StartCoroutine(PlayerAttack());
+            StartCoroutine(PlayerAttack());
         }
-        else if(playerAttack.speed > enemyAttack.speed)
+        else if(player.speed > enemy.speed)
         {
-
+            StartCoroutine(PlayerAttack());
         }
         else
         {
+            StartCoroutine(PlayerAttack());
             attackOrder = UnityEngine.Random.Range(0, 1);
         }
     }
     
     public IEnumerator PlayerAttack()
     {
-        calculate.Damage(player.lvl, enemy.defense, playerAttack.damage,player.power, Attacks.AttackType.water , Pokemon.priType.grass, Pokemon.priType.water);
+        finalDamage = calculate.Damage(player.lvl, enemy.defense, playerAttack.damage,player.power, playerAttack.attackType , enemy.type1, player.type2);
+        Debug.Log(finalDamage);
         yield return new WaitForSeconds(2);
     }
 
