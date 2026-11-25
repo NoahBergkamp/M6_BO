@@ -13,27 +13,22 @@ public class DamageCalculation : MonoBehaviour
     private float critChance = 6.25f;
     private float crit;
     private float dmgMult;
+    private float critMult;
     private float lvlMult;
     private float defenseMult;
-    public float Damage(float lvl, float defense, float damage ,float power, Enum attackType, Enum defenderType, Enum AttackerType)
+    public float Damage(float lvl, float defense, float attack ,float power, Enum attackType, Enum defenderType, Enum AttackerType)
     {
         typeMult = TypeMult.TypeEffectivenessCalculator(attackType, defenderType);
         CritCalc();
-        if (attackType == AttackerType)
-        {
-            STAB = 1.5f;
-        }
-        else
-        {
-            STAB = 1f;
-        }
-        dmgMult = UnityEngine.Random.Range(0.85f, 1);
-        baseDamage = damage * typeMult * STAB * crit * dmgMult;
-        defenseMult = defense / power;
-        lvlMult = (2 * lvl + 10) / 250;
-        damageDealt = defenseMult * lvlMult * baseDamage;
+        STAB = attackType.Equals(AttackerType) ? 1.5f : 1f;
+        dmgMult = UnityEngine.Random.Range(0.85f, 1f);
+        defenseMult = attack / defense;
+        lvlMult = (2 * lvl) / 5f + 2f;  
+        baseDamage = ((lvlMult * power * defenseMult)/50) + 2;
+        critMult = baseDamage * crit + 2; // never fixing this again fuckkkkkkkkkk all of you especially kareem
+        damageDealt = critMult * typeMult * STAB * dmgMult;
 
-        Debug.Log($"lvl: {lvl}\ndefense: {defense}\n damage:{power}\n typeMult: {typeMult}\n dmgMult:{dmgMult}\n baseDamage:{baseDamage}\n defenseMult: {defenseMult}\n LvlMult:{lvlMult}\n damage Dealt" );
+        Debug.Log($"lvl: {lvl}\ndefense: {defense}\n damage:{power}\n typeMult: {typeMult}\n critMult:{critMult}\n baseDamage:{baseDamage}\n defenseMult: {defenseMult}\n LvlMult:{lvlMult}\n damage Dealt" );
 
         return damageDealt;
     }
