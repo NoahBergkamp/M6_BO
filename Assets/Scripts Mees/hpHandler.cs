@@ -3,14 +3,16 @@ using UnityEngine.UI;
 
 public class hpHandler : MonoBehaviour
 {
-    public float Maxhealth = 100f;
-    public float Health = 100f;
+    private float Maxhealth = 100f;
+    private float Health;
     [SerializeField] private Slider HealthSlider;
     [SerializeField] private Graphic FillImage;
+    private AttacksManager attacksManager;
 
     void Start()
     {
-        HealthSlider.maxValue = Maxhealth;
+        attacksManager = GetComponent<AttacksManager>();
+
 
         if (HealthSlider.fillRect != null)
         {
@@ -26,12 +28,9 @@ public class hpHandler : MonoBehaviour
 
     void Update()
     {
+        Health = (int)attacksManager.EnemyHealth;
+        HealthSlider.maxValue = Maxhealth;
         HealthSlider.value = Health;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage();
-        }
 
         if (HealthSlider.value <= 25)
         {
@@ -66,10 +65,5 @@ public class hpHandler : MonoBehaviour
 
         HealthSlider.fillRect = rt;
         return fillGO.GetComponent<Image>();
-    }
-
-    private void TakeDamage()
-    {
-        Health -= 10f;
     }
 }

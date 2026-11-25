@@ -25,7 +25,7 @@ public class DamageCalculation : MonoBehaviour
         defenseMult = attack / defense;
         lvlMult = (2 * lvl) / 5f + 2f;  
         baseDamage = ((lvlMult * power * defenseMult)/50) + 2;
-        critMult = baseDamage * crit + 2; // never fixing this again fuckkkkkkkkkk all of you especially kareem
+        critMult = baseDamage * crit + 2; 
         damageDealt = critMult * typeMult * STAB * dmgMult;
 
         Debug.Log($"lvl: {lvl}\ndefense: {defense}\n damage:{power}\n typeMult: {typeMult}\n critMult:{critMult}\n baseDamage:{baseDamage}\n defenseMult: {defenseMult}\n LvlMult:{lvlMult}\n damage Dealt" );

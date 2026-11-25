@@ -3,6 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Pokemon", menuName = "Scriptable Objects/Pokemon")]
 public class Pokemon : ScriptableObject
 {
+
+    public int hp;
+
     public float health;
     public float defense;
     public float attack;

@@ -2048,8 +2048,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa2bbf885256bf459be39f6d7744d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::hpHandler
-  Maxhealth: 100
-  Health: 100
   HealthSlider: {fileID: 910586090}
   FillImage: {fileID: 1592313957}
 --- !u!1 &911515648
@@ -4075,13 +4073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414a58e9a098e1d4895bad1e8334fbb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackHandler
-  ChoiceArrow: {fileID: 907835265}
-  MoveBoxes:
-  - {fileID: 25131464}
-  - {fileID: 482007306}
-  - {fileID: 1513336149}
-  - {fileID: 1409988121}
-  SelectedMove: 0
 --- !u!1 &1825684421
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,8 +4717,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa2bbf885256bf459be39f6d7744d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::hpHandler
-  Maxhealth: 100
-  Health: 100
   HealthSlider: {fileID: 2120347085}
   FillImage: {fileID: 925625765}
 --- !u!1 &2138904160

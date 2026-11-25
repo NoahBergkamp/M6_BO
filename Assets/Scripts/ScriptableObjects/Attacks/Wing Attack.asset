@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wing Attack
   m_EditorClassIdentifier: Assembly-CSharp::Attacks
   attackName: Wing Attack
-  damage: 60
-  speed: 140
-  accuracy: 90
-  critChance: 20
+  power: 80
+  accuracy: 100
+  critChance: 4
+  attackType: 2

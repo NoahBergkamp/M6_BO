@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Work Up
   m_EditorClassIdentifier: Assembly-CSharp::Attacks
   attackName: water pistol
-  damage: 60
-  speed: 140
-  accuracy: 90
-  critChance: 20
+  power: 120
+  accuracy: 100
+  critChance: 4
+  attackType: 0

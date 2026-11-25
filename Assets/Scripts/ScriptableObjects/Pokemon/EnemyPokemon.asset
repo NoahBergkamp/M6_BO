@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc18b1542a548c4c8fbaf88441ad414, type: 3}
   m_Name: EnemyPokemon
   m_EditorClassIdentifier: Assembly-CSharp::Pokemon
-  health: 0
-  defense: 0
+  hp: 100
+  health: 100
+  defense: 100
+  attack: 120
+  speed: 100
+  lvl: 50
+  type1: 2
+  type2: 2

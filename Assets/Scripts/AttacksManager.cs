@@ -11,6 +11,8 @@ public class AttacksManager : MonoBehaviour
 
     private int playerChosenAttack;
     private int enemyChosenAttack;
+    private int enemyHealth;
+    private int playerHealth;
 
     private bool playerChoiceMade = true;
     private bool enemyChoiceMade = true;
@@ -21,13 +23,16 @@ public class AttacksManager : MonoBehaviour
 
 
     private int attackOrder;
+
+    public int EnemyHealth { get => enemyHealth; }
     void Start()
     {
+        enemyHealth = (int)enemy.health;
+        playerHealth = (int)player.health;
         playerChosenAttack = 1;
         enemyChosenAttack = 0;
         playerAttack = playerAttacks[playerChosenAttack];
         enemyAttack = enemyAttacks[enemyChosenAttack];
-        
     }
 
     void Update()
@@ -55,7 +60,6 @@ public class AttacksManager : MonoBehaviour
         }
         else
         {
-            StartCoroutine(PlayerAttack());
             attackOrder = UnityEngine.Random.Range(0, 1);
             if(attackOrder == 0)
             {
@@ -80,8 +84,9 @@ public class AttacksManager : MonoBehaviour
             playerAttack.attackType,
             enemy.type1,
             player.type2);
-        Debug.Log(finalDamage);
+        Debug.Log("PlayerDamage: " + finalDamage);
         yield return new WaitForSeconds(2);
+        enemyHealth -= (int)finalDamage;
     }
 
     public IEnumerator EnemyAttack()
@@ -94,7 +99,8 @@ public class AttacksManager : MonoBehaviour
             enemyAttack.attackType, 
             player.type1, 
             enemy.type2);
-        Debug.Log(finalDamage);
+        Debug.Log("EnemyDamage: " + finalDamage);
         yield return new WaitForSeconds(2);
+        playerHealth -= (int)finalDamage;
     }
 }
