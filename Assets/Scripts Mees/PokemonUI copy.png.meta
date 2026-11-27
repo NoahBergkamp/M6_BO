@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4271029a4fa33f248b232935c9c7278a
+guid: 5dfaa84d2f24e3547b133c4f3dcaa37c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9182157284707403512
-    second: Untitled-1_0
+      213: -2800008322751044873
+    second: PokemonUI copy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled-1_0
+      name: PokemonUI copy_0
       rect:
         serializedVersion: 2
-        x: 481
-        y: 439
-        width: 958
-        height: 202
+        x: 462
+        y: 435
+        width: 996
+        height: 210
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f600cab6639d6f70800000000000000
-      internalID: 9182157284707403512
+      spriteID: 7f2694af34f5429d0800000000000000
+      internalID: -2800008322751044873
       vertices: []
       indices: 
       edges: []
@@ -127,7 +127,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 117f8c5983fd0c748b82582ded26354e
+    spriteID: 2151425c20cf73040a33134bb57378c9
     internalID: 0
     vertices: []
     indices: 
@@ -137,7 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled-1_0: 9182157284707403512
+      PokemonUI copy_0: -2800008322751044873
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
